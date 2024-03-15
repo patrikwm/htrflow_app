@@ -19,8 +19,12 @@ class TrafficDataHandler:
     _TZ = "Europe/Stockholm"
     _INTERVAL_MIN_UPDATE = 30
     _repo = huggingface_hub.Repository(
-        local_dir="data", repo_type="dataset", clone_from="Riksarkivet/traffic_demo_data", use_auth_token=_TOKEN
+        local_dir="data",
+        repo_type="dataset",
+        clone_from=os.environ.get("HF_DATA_REPO", "Riksarkivet/traffic_demo_data"),
+        use_auth_token=_TOKEN
     )
+
     _session_uuid = None
 
     @classmethod
