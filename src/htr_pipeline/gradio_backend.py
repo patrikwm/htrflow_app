@@ -202,7 +202,8 @@ def compute_cer_a_and_b_with_gt(run_a, run_b, run_gt):
         return f"A & B -> GT: {round(cer_metric.compute(predictions=[text_run_a], references=[text_run_gt]), 4)}"
 
     else:
-        return f"A -> GT: {round(cer_metric.compute(predictions=[text_run_a], references=[text_run_gt]), 4)}, B -> GT {round(cer_metric.compute(predictions=[text_run_b], references=[text_run_gt]), 4)}"
+        return f"A -> GT: {round(cer_metric.compute(predictions=[text_run_a], references=[text_run_gt]), 4)} \
+              , B -> GT {round(cer_metric.compute(predictions=[text_run_b], references=[text_run_gt]), 4)}"
 
 
 def temporary_xml_parser(page_xml):
