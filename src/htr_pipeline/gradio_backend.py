@@ -88,8 +88,8 @@ class FastTrack:
             ):  # >= 0 means on the polygon or inside
                 return text
 
-    def segment_to_xml_api(self, image, model="Riksarkivet/satrn_htr"):
-        rendered_xml = self.pipeline.running_htr_pipeline(image, model)
+    def segment_to_xml_api(self, image, htr_tool_transcriber_model_dropdown="Riksarkivet/satrn_htr"):
+        rendered_xml = self.pipeline.running_htr_pipeline(image, htr_tool_transcriber_model_dropdown)
         return rendered_xml
 
 
